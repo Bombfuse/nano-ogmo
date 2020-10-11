@@ -37,7 +37,7 @@ pub struct Project {
     #[nserde(rename = "levelMaxSize")]
     pub level_max_size: Vec2i32,
 
-    pub layers: Vec<Layer>,
+    pub layers: Vec<ProjectLayer>,
 
     pub entities: Vec<Entity>,
 }
@@ -52,7 +52,7 @@ impl Project {
 
 
 #[derive(Clone, Debug, DeJson)]
-pub struct Layer {
+pub struct ProjectLayer {
     pub definition: String,
     pub name: String,
 
