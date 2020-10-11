@@ -39,7 +39,7 @@ pub struct Project {
 
     pub layers: Vec<ProjectLayer>,
 
-    pub entities: Vec<Entity>,
+    pub entities: Vec<ProjectEntity>,
 }
 
 impl Project {
@@ -73,7 +73,7 @@ pub struct ProjectLayer {
 }
 
 #[derive(Clone, Debug, DeJson)]
-pub struct Entity {
+pub struct ProjectEntity {
     pub name: String,
     pub limit: i32,
     pub size: Vec2i32,

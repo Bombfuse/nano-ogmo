@@ -24,5 +24,5 @@ fn level() {
     assert_eq!(level.offset_y, 0);
     assert_eq!(level.layers.len(), 3);
     assert_eq!(level.layers[0].name, "foreground");
-    assert_eq!(level.layers[0].tileset, "New Tileset");
+    assert_eq!(level.layers[0].tileset.clone().unwrap(), "New Tileset");
 }

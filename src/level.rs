@@ -2,6 +2,8 @@ use nanoserde::{DeJson};
 
 use crate::{OgmoError};
 
+use std::collections::HashMap;
+
 #[derive(Clone, Debug, DeJson)]
 pub struct Level {
     #[nserde(rename = "ogmoVersion")]
@@ -30,6 +32,10 @@ impl Level {
 pub struct LevelLayer {
     pub name: String,
 
+    pub entities: Option<LevelEntity>,
+    pub tileset: Option<String>,
+    pub data: Option<Vec<i32>>,
+
     #[nserde(rename = "_eid")]
     pub export_id: String,
 
@@ -45,12 +51,29 @@ pub struct LevelLayer {
     #[nserde(rename = "gridCellHeight")]
     pub grid_cell_height: u32,
 
-    pub tileset: String,
-    pub data: Vec<i32>,
-
     #[nserde(rename = "exportMode")]
     pub export_mode: u32,
 
     #[nserde(rename = "arrayMode")]
     pub array_mode: u32,
+}
+
+#[derive(Clone, Debug, DeJson)]
+pub struct LevelEntity {
+    pub name: String,
+    pub id: u32,
+
+    #[nserde(rename = "_eid")]
+    pub export_id: String,
+
+    pub x: i32,
+    pub y: i32,
+
+    #[nserde(rename = "originX")]
+    pub origin_x: i32,
+
+    #[nserde(rename = "originY")]
+    pub origin_y: i32,
+
+    pub values: HashMap<String, String>,
 }
