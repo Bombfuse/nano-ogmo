@@ -75,5 +75,5 @@ pub struct LevelEntity {
     #[nserde(rename = "originY")]
     pub origin_y: i32,
 
-    pub values: HashMap<String, String>,
+    pub values: Option<HashMap<String, String>>,
 }
