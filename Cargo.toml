@@ -1,0 +1,18 @@
+[package]
+name = "nano-ogmo"
+version = "0.1.0"
+authors = ["Bombfuse <eiffeldud@gmail.com>"]
+edition = "2018"
+description = "Cross platform ogmo3 deserialization"
+repository = "https://github.com/Bombfuse/nano-ogmo"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "nano_ogmo"
+path = "src/lib.rs"
+
+[dependencies]
+nanoserde = { git = "https://github.com/not-fl3/nanoserde", branch = "master" }
+
+[dev-dependencies]
+emerald = { git = "https://github.com/Bombfuse/emerald", branch = "master" }
