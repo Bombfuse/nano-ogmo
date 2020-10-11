@@ -32,7 +32,7 @@ impl Level {
 pub struct LevelLayer {
     pub name: String,
 
-    pub entities: Option<LevelEntity>,
+    pub entities: Option<Vec<LevelEntity>>,
     pub tileset: Option<String>,
     pub data: Option<Vec<i32>>,
 
