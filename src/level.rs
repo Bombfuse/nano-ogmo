@@ -51,6 +51,12 @@ pub struct LevelLayer {
     #[nserde(rename = "gridCellHeight")]
     pub grid_cell_height: u32,
 
+    #[nserde(rename = "gridCellsX")]
+    pub grid_cells_x: u32,
+
+    #[nserde(rename = "gridCellsY")]
+    pub grid_cells_y: u32,
+
     #[nserde(rename = "exportMode")]
     pub export_mode: Option<u32>,
 
