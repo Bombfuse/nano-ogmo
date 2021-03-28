@@ -13,7 +13,4 @@ name = "nano_ogmo"
 path = "src/lib.rs"
 
 [dependencies]
-nanoserde = "0.1.20"
-
-[dev-dependencies]
-emerald = { git = "https://github.com/Bombfuse/emerald", branch = "master" }
+nanoserde = "0.1.25"
