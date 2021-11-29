@@ -13,4 +13,4 @@ name = "nano_ogmo"
 path = "src/lib.rs"
 
 [dependencies]
-nanoserde = "0.1.25"
+nanoserde = "0.1.29"
