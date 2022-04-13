@@ -62,7 +62,7 @@ pub struct ProjectLayer {
     pub export_id: String,
 
     #[nserde(rename = "exportMode")]
-    pub export_mode: u32,
+    pub export_mode: Option<u32>,
 
     #[nserde(rename = "arrayMode")]
     pub array_mode: u32,
