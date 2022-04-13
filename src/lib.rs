@@ -1,19 +1,17 @@
-
-mod project;
 mod level;
+mod project;
+mod tileset;
 
-pub use project::*;
 pub use level::*;
+pub use project::*;
 
 use nanoserde::DeJson;
-
 
 #[derive(Clone, Debug, DeJson, PartialEq)]
 pub struct Vec2f32 {
     pub x: f32,
     pub y: f32,
 }
-
 
 #[derive(Clone, Debug, DeJson, PartialEq)]
 pub struct Vec2i32 {
@@ -28,7 +26,7 @@ pub struct OgmoError {
 impl OgmoError {
     pub fn new<T: Into<String>>(msg: T) -> Self {
         OgmoError {
-            message: msg.into()
+            message: msg.into(),
         }
     }
 }

@@ -1,6 +1,6 @@
-use nanoserde::{DeJson};
+use nanoserde::DeJson;
 
-use crate::{Vec2i32, OgmoError};
+use crate::{tileset::Tileset, OgmoError, Vec2i32};
 
 #[derive(Clone, Debug, DeJson)]
 pub struct Project {
@@ -38,8 +38,8 @@ pub struct Project {
     pub level_max_size: Vec2i32,
 
     pub layers: Vec<ProjectLayer>,
-
     pub entities: Vec<ProjectEntity>,
+    pub tilesets: Vec<Tileset>,
 }
 
 impl Project {
@@ -49,7 +49,6 @@ impl Project {
         Ok(proj)
     }
 }
-
 
 #[derive(Clone, Debug, DeJson)]
 pub struct ProjectLayer {
@@ -83,7 +82,7 @@ pub struct ProjectEntity {
     pub rotatable: bool,
     pub tags: Vec<String>,
     pub values: Vec<Value>,
-    
+
     #[nserde(rename = "exportID")]
     pub export_id: String,
 
@@ -125,11 +124,10 @@ pub struct ProjectEntity {
 
     #[nserde(rename = "nodeDisplay")]
     pub node_display: u32,
-    
+
     #[nserde(rename = "nodeGhost")]
     pub node_ghost: bool,
 }
-
 
 #[derive(Clone, Debug, DeJson)]
 pub struct Shape {
@@ -155,24 +153,4 @@ pub struct Value {
 
     #[nserde(rename = "maxLength")]
     pub max_length: Option<u32>,
-}
-
-#[derive(Clone, Debug, DeJson)]
-pub struct Tileset {
-    pub label: String,
-    pub path: String,
-
-    #[nserde(rename = "tileSeparationX")]
-    pub tile_separation_x: u32,
-
-    #[nserde(rename = "tileSeparationY")]
-    pub tile_separation_y: u32,
-
-    #[nserde(rename = "tileWidth")]
-    pub tile_width: u32,
-
-    #[nserde(rename = "tileHeight")]
-    pub tile_height: u32,
-
-    // pub image: String,
 }
