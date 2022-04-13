@@ -65,10 +65,10 @@ pub struct ProjectLayer {
     pub export_mode: Option<u32>,
 
     #[nserde(rename = "arrayMode")]
-    pub array_mode: u32,
+    pub array_mode: Option<u32>,
 
     #[nserde(rename = "defaultTileset")]
-    pub default_tileset: String,
+    pub default_tileset: Option<String>,
 }
 
 #[derive(Clone, Debug, DeJson)]
